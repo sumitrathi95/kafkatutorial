@@ -3,12 +3,12 @@ server:
 spring:
   kafka:
     consumer:
-      bootstrap-servers: localhost:9092
+      bootstrap-servers: http://9092-bf7671da-41b8-477f-be2f-b657f21b7079.ws-us02.gitpod.io
       group-id: group-id
       auto-offset-reset: earliest
       key-deserializer: org.apache.kafka.common.serialization.StringDeserializer
       value-deserializer: org.apache.kafka.common.serialization.StringDeserializer
     producer:
-      bootstrap-servers: localhost:9092
+      bootstrap-servers: http://9092-bf7671da-41b8-477f-be2f-b657f21b7079.ws-us02.gitpod.io
       key-deserializer: org.apache.kafka.common.serialization.StringDeserializer
       value-deserializer: org.apache.kafka.common.serialization.StringDeserializer
