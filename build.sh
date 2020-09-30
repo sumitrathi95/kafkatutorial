@@ -9,6 +9,8 @@ rm -rf
 
 curdir=`pwd`
 
+mkdir -p /workspace/kafka_setup/
+
 /bin/rm -rf ${builddir}
 mkdir -p ${builddir}/connectors
 mkdir -p ${builddir}/bin
@@ -35,5 +37,13 @@ cp kafka_2.11-${kafkaversion}/libs/*.jar ${builddir}/libs
 echo "Clean up ..."
 /bin/rm -rf kafka_2.11-${kafkaversion}
 /bin/rm -f kafka_2.11-${kafkaversion}.tgz
+
+cd /workspace/kafka_setup
+tar xzf kafka_2.11-${kafkaversion}.tgz
+cd kafka_2.11-${kafkaversion}
+
+echo "Running Servers... "
+bin/zookeeper-server-start.sh config/zookeeper.properties &
+bin/kafka-server-start.sh config/server.properties &
 
 cd /workspace/kafkatutorial
