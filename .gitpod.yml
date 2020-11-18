@@ -1,3 +1,1 @@
-tasks:
-  - init: echo "Setting Up Kafka and Zookeeper"
-    command: sh build.sh
+
